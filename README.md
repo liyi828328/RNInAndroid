@@ -4,13 +4,17 @@
 1.创建工程
 
 2.npm初始化
+
     1）npm init
+    
     2）npm install --save react react-native
+    
     3）curl -o .flowconfig https://raw.githubusercontent.com/facebook/react-native/master/.flowconfig
 
 3.编写js文件，文件可参考工程目录下index.android.js
 
 4.增加rn依赖
+
     1）app / build.gradle增加compile
         dependencies {
             ... compile "com.facebook.react:react-native:+" // From node_modules.
