@@ -1,5 +1,6 @@
 package perseverance.li.rn;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -14,6 +15,7 @@ import com.facebook.react.shell.MainReactPackage;
 public class RNActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler {
 
     public static final String JS_BUNDLE_NAME = "js_bundle";
+    public static final String JS_MODULE_NAME = "js_module";
     private ReactRootView mReactRootView;
     private ReactInstanceManager mReactInstanceManager;
 
@@ -21,9 +23,11 @@ public class RNActivity extends AppCompatActivity implements DefaultHardwareBack
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String jsBundleName = getIntent().getStringExtra(JS_BUNDLE_NAME);
-        if (TextUtils.isEmpty(jsBundleName)) {
-            Toast.makeText(this, "请传入 js bundle name", Toast.LENGTH_SHORT).show();
+        Intent intent = getIntent();
+        String jsBundleName = intent.getStringExtra(JS_BUNDLE_NAME);
+        String jsModuleName = intent.getStringExtra(JS_MODULE_NAME);
+        if (TextUtils.isEmpty(jsBundleName) || TextUtils.isEmpty(jsModuleName)) {
+            Toast.makeText(this, "请传入 js bundle and module name", Toast.LENGTH_SHORT).show();
             finish();
             return;
         }
@@ -37,7 +41,7 @@ public class RNActivity extends AppCompatActivity implements DefaultHardwareBack
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
-        mReactRootView.startReactApplication(mReactInstanceManager, "HelloWorld", null);
+        mReactRootView.startReactApplication(mReactInstanceManager, jsModuleName, null);
 
         setContentView(mReactRootView);
     }

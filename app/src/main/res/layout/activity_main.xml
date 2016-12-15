@@ -11,7 +11,7 @@
     tools:context="perseverance.li.rn.MainActivity">
 
     <Button
-        android:id="@+id/start_rn"
+        android:id="@+id/start_hw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hello World From RN" />
