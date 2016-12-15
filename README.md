@@ -37,7 +37,7 @@
 
     注意：这个也需要注意目录层级关系，命令在根目录执行即可。
 
-    react-native bundle --platform android --dev false --entry-file ./js/hello_world.js --bundle-output ./app/src/main/assets/hello_world.bundle --assets-dest ./app/src/main/res/
+    react-native bundle --platform android --dev false --entry-file ./js/hello_world.js --bundle-output ./app/src/main/assets/index_hello_world.bundle --assets-dest ./app/src/main/res/
 
 6.以上都做完之后就可以run app 了，具体的代码直接参考项目就可以了。
 

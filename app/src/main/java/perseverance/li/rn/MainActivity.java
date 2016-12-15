@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.start_hw).setOnClickListener(this);
+        findViewById(R.id.start_button).setOnClickListener(this);
     }
 
     @Override
@@ -22,9 +23,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = v.getId();
         Intent intent = new Intent(this, RNActivity.class);
         if (id == R.id.start_hw) {
-            intent.putExtra(RNActivity.JS_BUNDLE_NAME, "hello_world.bundle");
+            intent.putExtra(RNActivity.JS_BUNDLE_NAME, "index_hello_world.bundle");
             intent.putExtra(RNActivity.JS_MODULE_NAME, "HelloWorld");
             startActivity(intent);
+        } else if (id == R.id.start_button) {
+
         }
     }
 
