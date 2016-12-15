@@ -14,5 +14,5 @@
         android:id="@+id/start_rn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Start RN" />
+        android:text="Hello World From RN" />
 </RelativeLayout>
